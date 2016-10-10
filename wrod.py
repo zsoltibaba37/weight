@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/python3.2
 # -*- coding: UTF-8 -*-
 import sys
 import shutil
