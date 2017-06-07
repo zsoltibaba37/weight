@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+# Ez a program kiszámolja egy lemeztábla súlyát.
 
 import sys
 import os
