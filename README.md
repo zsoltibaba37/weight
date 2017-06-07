@@ -1,2 +1,2 @@
 # weigt
-Calculation of weight plates or bars
+Calculation of weight one plates or bars.
