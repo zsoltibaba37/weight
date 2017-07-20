@@ -1,0 +1,15 @@
+.\" Manpage a wsheet parancshoz.
+.\" Vedd fel a kapcsolatot Zsoltival, ha hibát találsz vagy elírást.
+.TH man 1 "2017 May 23" "1.0" "wsheet man page"
+.SH NAME
+wsheet \- Kiszámolja egy lemeztábla súlyát.
+.SH SYNOPSIS
+wsheet 
+.SH DESCRIPTION
+Kiszámolja egy lemeztábla súlyát.
+.SH OPTIONS
+Nincsennek opciók
+.SH BUGS
+Nincsennek ismert hibák.
+.SH AUTHOR
+Zsolti
