@@ -23,18 +23,21 @@ class Weight:
     def get_dimension(self):
         """
         :return: %2.2fmm %2.2fmm %2.2fmm
+        Return the plate size
         """
         return "%2.2fmm %2.2fmm %2.2fmm" % (self.l, self.w, self.t)
 
     def set_density(self, d):
         """
         :param d: Density
+        Adjusts the density of the steel
         """
         self.d = d
 
     def get_weight(self):
         """
         :return:  {:.2f} "gram" or {:.2f} "kg"
+        The calculated weight is less than or greater than one kg
         """
         s = self.l * self.w * self.t * self.d / 10 ** 6
         if s < 1:
@@ -54,8 +57,9 @@ class Chk_float:
     """
     def __init__(self, t):
         """
-        :param t: Text
+        :param t: String
         The plate {self.t} (mm):
+        Example: Chk_float("Length")
         """
         self.t = t
         self.f = 0.0
@@ -63,7 +67,8 @@ class Chk_float:
     def check(self):
         """
         :return: self.f
-        Return checked float number
+        It asks for one of the parameters of the plate
+        Return inspected float number
         """
         while True:
             try:
