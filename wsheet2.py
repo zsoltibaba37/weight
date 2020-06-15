@@ -25,7 +25,7 @@ class Weight:
         :return: %2.2fmm %2.2fmm %2.2fmm
         Return the plate size
         """
-        return "%2.2fmm %2.2fmm %2.2fmm" % (self.l, self.w, self.t)
+        return "%2.2fmm * %2.2fmm * %2.2fmm" % (self.l, self.w, self.t)
 
     def set_density(self, d):
         """
