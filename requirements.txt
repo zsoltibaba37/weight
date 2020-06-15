@@ -1,3 +1,1 @@
-pydialog==0.1
-pythondialog==3.5.1
 termcolor==1.1.0
