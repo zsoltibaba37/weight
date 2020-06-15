@@ -4,20 +4,38 @@
 import sys
 from termcolor import cprint
 
+
 class Weight:
+    """
+    Calculate the weight of plate
+    """
     def __init__(self, l, w, t):
+        """
+        :param l: Length
+        :param w: Width
+        :param t: Thickness
+        """
         self.d = 7.85   # Density
         self.l = l      # Length
         self.w = w      # Width
         self.t = t      # Thickness
 
     def get_dimension(self):
+        """
+        :return: %2.2fmm %2.2fmm %2.2fmm
+        """
         return "%2.2fmm %2.2fmm %2.2fmm" % (self.l, self.w, self.t)
 
     def set_density(self, d):
+        """
+        :param d: Density
+        """
         self.d = d
 
     def get_weight(self):
+        """
+        :return:  {:.2f} "gram" or {:.2f} "kg"
+        """
         s = self.l * self.w * self.t * self.d / 10 ** 6
         if s < 1:
             m = "gram"
@@ -29,21 +47,33 @@ class Weight:
             return s + m
 
 
-class Checkint:
+class Chk_float:
+    """
+    Check the input field
+    Is that float number or something else
+    """
     def __init__(self, t):
+        """
+        :param t: Text
+        The plate {self.t} (mm):
+        """
         self.t = t
-        self.i = 0
+        self.f = 0.0
 
     def check(self):
+        """
+        :return: self.f
+        Return checked float number
+        """
         while True:
             try:
-                self.i = float(input(f'The plate {self.t} (mm): '))
-                if self.i <= 0:
-                    self.i = 0
+                self.f = float(input(f'The plate {self.t} (mm): '))
+                if self.f <= 0:
+                    self.f = 0.0
                 else:
                     pass
-                    return self.i
-                z = 4 / self.i
+                    return self.f
+                z = 4 / self.f
                 break
             except ValueError:
                 print("This is not a number or not integer/float number!")
@@ -56,11 +86,10 @@ class Checkint:
 def main():
     while True:
         print("#" * 80)
-        plate = Weight(Checkint("Length").check(), Checkint("Width").check(), Checkint("Thickness").check())
+        plate = Weight(Chk_float("Length").check(), Chk_float("Width").check(), Chk_float("Thickness").check())
         print("#" * 80)
         print("The plate size  : {}".format(plate.get_dimension()))
         cprint("The plate weight: {}".format(plate.get_weight()), 'cyan')
-        plate.get_dimension()
 
 
 if __name__ == '__main__':
