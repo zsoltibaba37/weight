@@ -63,14 +63,14 @@ while True:
     if suly < 1:
         suly = suly * 10**3
         print ("-" * 80)
-        print ("A tábla mérete:", hossz, "mm *", szelesseg, "mm *", vastagsag,"mm")
+        print ("A lemez mérete:", hossz, "mm *", szelesseg, "mm *", vastagsag,"mm")
         print ("A lemez súlya:", "%.2f" % suly, "gramm.")#Ha kisebb mint 1kg akkor grammban írja ki a súlyt
         print ("-" * 80)
         print ("A Programból való kilépéshez nyomja meg a CTRL-C billentyű kombinációt".center(80))  # Középre igazítva
         print ("-" * 80)
     else:
         print ("-" * 80)
-        print ("A tábla mérete:", hossz, "mm *", szelesseg, "mm *", vastagsag, "mm")
+        print ("A lemez mérete:", hossz, "mm *", szelesseg, "mm *", vastagsag, "mm")
         print ("A lemez súlya:", "%.2f" % suly, "kg.")#Ha nagyobb mint 1kg akkor kilóban írja ki a súlyt
         print ("-" * 80)
         print ("A Programból való kilépéshez nyomja meg a CTRL-C billentyű kombinációt".center(80))  # Középre igazítva
