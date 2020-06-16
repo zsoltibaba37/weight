@@ -25,7 +25,7 @@ class Weight:
         :return: %2.2fmm %2.2fmm %2.2fmm
         Return the plate size
         """
-        return "%2.2fmm * %2.2fmm * %2.2fmm" % (self.l, self.w, self.t)
+        return "%2.2fmm × %2.2fmm × %2.2fmm" % (self.l, self.w, self.t)
 
     def set_density(self, d):
         """
@@ -63,6 +63,8 @@ class Chk_float:
         """
         self.t = t
         self.f = 0.0
+        self.t_len = 9-len(self.t)
+        self.space = " "
 
     def check(self):
         """
@@ -72,7 +74,7 @@ class Chk_float:
         """
         while True:
             try:
-                self.f = float(input(f'The plate {self.t} (mm): '))
+                self.f = float(input(f'What is the {self.t} of plate?{self.space*self.t_len} (mm): '))
                 if self.f <= 0:
                     self.f = 0.0
                 else:
@@ -81,20 +83,24 @@ class Chk_float:
                 z = 4 / self.f
                 break
             except ValueError:
-                print("This is not a number or not integer/float number!")
+                cprint("This is not a number or not integer/float number!", 'red')
             except ZeroDivisionError:
-                print("The value is zero or negative!")
+                cprint("The value is zero or negative!", 'red')
             except KeyboardInterrupt:
-                sys.exit(0)
+                sys.exit("\nBye Bye!")
 
 
 def main():
+    print ("#" * 80)
+    print ("Welcome".center(80))
+    print ("This program calculates the weight of a plate".center(80))
+    print ("Press Ctrl-c to exit".center(80))
     while True:
         print("#" * 80)
         plate = Weight(Chk_float("Length").check(), Chk_float("Width").check(), Chk_float("Thickness").check())
         print("#" * 80)
-        print("The plate size  : {}".format(plate.get_dimension()))
-        cprint("The plate weight: {}".format(plate.get_weight()), 'cyan')
+        cprint("The plate size is  : {}".format(plate.get_dimension()), 'cyan')
+        cprint("The plate weight is: {}".format(plate.get_weight()), 'green')
 
 
 if __name__ == '__main__':
