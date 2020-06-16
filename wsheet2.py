@@ -9,16 +9,17 @@ class Weight:
     """
     Calculate the weight of plate
     """
+
     def __init__(self, l, w, t):
         """
         :param l: Length
         :param w: Width
         :param t: Thickness
         """
-        self.d = 7.85   # Density
-        self.l = l      # Length
-        self.w = w      # Width
-        self.t = t      # Thickness
+        self.d = 7.85  # Density
+        self.l = l  # Length
+        self.w = w  # Width
+        self.t = t  # Thickness
 
     def get_dimension(self):
         """
@@ -55,6 +56,7 @@ class Chk_float:
     Check the input field
     Is that float number or something else
     """
+
     def __init__(self, t):
         """
         :param t: String
@@ -72,7 +74,7 @@ class Chk_float:
         """
         while True:
             try:
-                self.f = float(input(f'What is the {self.t} of plate?{" "*(9-len(self.t))} (mm): '))
+                self.f = float(input(f'What is the {self.t} of plate?{" " * (9 - len(self.t))} (mm): '))
                 if self.f <= 0:
                     self.f = 0.0
                 else:
@@ -87,11 +89,11 @@ class Chk_float:
 
 
 def main():
-    print ("#" * 80)
-    print ("Welcome".center(80))
-    print ("This program calculate the weight of a plate".center(80))
+    print("#" * 80)
+    print("Welcome".center(80))
+    print("This program calculate the weight of a plate".center(80))
     while True:
-        print ("Press Ctrl-C to Exit".center(80))
+        print("Press Ctrl-C to Exit".center(80))
         print("#" * 80)
         plate = Weight(Chk_float("Length").check(), Chk_float("Width").check(), Chk_float("Thickness").check())
         print("#" * 80)
@@ -105,8 +107,6 @@ def main():
 
 if __name__ == '__main__':
     try:
-       main()
+        main()
     except KeyboardInterrupt:
         sys.exit("\nBye Bye!")
-
-
