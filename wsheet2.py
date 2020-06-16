@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-import sys
+import sys, os
 from termcolor import cprint
 
 
@@ -92,13 +92,20 @@ def main():
     print ("#" * 80)
     print ("Welcome".center(80))
     print ("This program calculate the weight of a plate".center(80))
-    print ("Press Ctrl-C to exit".center(80))
     while True:
+        print ("Press Ctrl-C to Exit".center(80))
         print("#" * 80)
         plate = Weight(Chk_float("Length").check(), Chk_float("Width").check(), Chk_float("Thickness").check())
         print("#" * 80)
         cprint("The plate size is  : {}".format(plate.get_dimension()), 'cyan')
         cprint("The plate weight is: {}".format(plate.get_weight()), 'green')
+        print("#" * 80)
+        try:
+            input("Press Enter to Continue...".center(80))
+        except KeyboardInterrupt:
+            sys.exit("\nBye Bye!")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("#" * 80)
 
 
 if __name__ == '__main__':
