@@ -63,8 +63,6 @@ class Chk_float:
         """
         self.t = t
         self.f = 0.0
-        self.t_len = 9-len(self.t)
-        self.space = " "
 
     def check(self):
         """
@@ -74,7 +72,7 @@ class Chk_float:
         """
         while True:
             try:
-                self.f = float(input(f'What is the {self.t} of plate?{self.space*self.t_len} (mm): '))
+                self.f = float(input(f'What is the {self.t} of plate?{" "*(9-len(self.t))} (mm): '))
                 if self.f <= 0:
                     self.f = 0.0
                 else:
@@ -93,8 +91,8 @@ class Chk_float:
 def main():
     print ("#" * 80)
     print ("Welcome".center(80))
-    print ("This program calculates the weight of a plate".center(80))
-    print ("Press Ctrl-c to exit".center(80))
+    print ("This program calculate the weight of a plate".center(80))
+    print ("Press Ctrl-C to exit".center(80))
     while True:
         print("#" * 80)
         plate = Weight(Chk_float("Length").check(), Chk_float("Width").check(), Chk_float("Thickness").check())
