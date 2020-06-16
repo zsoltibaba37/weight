@@ -84,8 +84,6 @@ class Chk_float:
                 cprint("This is not a number or not integer/float number!", 'red')
             except ZeroDivisionError:
                 cprint("The value is zero or negative!", 'red')
-            except KeyboardInterrupt:
-                sys.exit("\nBye Bye!")
 
 
 def main():
@@ -100,14 +98,15 @@ def main():
         cprint("The plate size is  : {}".format(plate.get_dimension()), 'cyan')
         cprint("The plate weight is: {}".format(plate.get_weight()), 'green')
         print("#" * 80)
-        try:
-            input("Press Enter to Continue...".center(80))
-        except KeyboardInterrupt:
-            sys.exit("\nBye Bye!")
+        input("Press Enter to Continue...".center(80))
         os.system('cls' if os.name == 'nt' else 'clear')
         print("#" * 80)
 
 
 if __name__ == '__main__':
-    main()
+    try:
+       main()
+    except KeyboardInterrupt:
+        sys.exit("\nBye Bye!")
+
 
