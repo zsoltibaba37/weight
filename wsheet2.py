@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-import sys, os
+import os, sys
 from termcolor import cprint
 
 
